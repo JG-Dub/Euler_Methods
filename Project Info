@@ -1,0 +1,8 @@
+""" This investigation involved the modelling of a hypothetical solar system. Where there is one
+planet orbiting around the sun. Using numerical Euler and Euler-Cromer methods we have modelled the orbit of this
+planet around the sun. This allowed the properties of the of our model system to be investigated,
+furthermore, comparisons between the algorithm and exact solutions gives us valuable insight
+into the nature of the approximations used.
+
+The Euler-Cromer method is a reasonable approximator of planetary motion move a small enough time step (dt) is used. From this Keplers 2nd law can be verifed.
+"""

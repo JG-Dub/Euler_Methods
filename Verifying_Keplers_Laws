@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
+import matplotlib.pylab as plt
+import math
+t = 0.00
+dt= 0.0001
+x = 1.00
+y = 0.00
+v_x = 0.00
+v_y = math.pi
+lis_x = []
+lis_y = []
+lis_v_x = []
+lis_v_y = []
+lis_t =[]
+x_kep1 = []
+y_kep1 = []
+    
+def v_xi():
+    return v_x - (4*(math.pi**2)*x/(r**3))*dt
+
+def x_i():
+    return x + v_xi(dt)*dt
+
+def v_yi():
+    return v_y - (4*(math.pi**2)*y/(r**3))*dt
+
+def y_i():
+    return y + v_yi(dt)*dt
+
+fig,ax = plt.subplots(1,1)
+while t <= 5:
+    r = math.sqrt(x**2+y**2)
+    v_x = v_xi()
+    lis_v_x.append(v_x)
+    x = x + v_x*dt
+    lis_x.append(x)
+    v_y = v_yi()
+    lis_v_y.append(v_y)
+    y = y + v_y*dt
+    lis_y.append(y)
+    t = t + dt
+    lis_t.append(t)
+    if round(t,4) == 0.400:
+        plt.plot([0,x],[0,y], c = 'green')
+    if round(t,4) == 0.500:
+        plt.plot([0,x],[0,y], c = 'green')
+    if round(t,4) == 0.100:
+        plt.plot([0,x],[0,y], c = 'red')
+    if round(t,4) == 0.200:
+        plt.plot([0,x],[0,y], c = 'red')
+        
+    
+ax.set_aspect('equal')
+plt.figure(1)
+plt.plot(lis_x,lis_y, 'b')
+
+
+#Semi-major and Semi-minor axis
+a = max(lis_x)
+#print (a)
+b = max(lis_y)
+#print (b)
+if max(lis_x)>max(lis_y):
+    a = max(lis_x)
+    b = max(lis_y)
+else:
+    b = max(lis_x)
+    a = max(lis_y)
+    
+plt.figure(1)
+plt.scatter(0,0, c='yellow')
+
+
+
+plt.show()

@@ -4,5 +4,5 @@ planet around the sun. This allowed the properties of the of our model system to
 furthermore, comparisons between the algorithm and exact solutions gives us valuable insight
 into the nature of the approximations used.
 
-The Euler-Cromer method is a reasonable approximator of planetary motion move a small enough time step (dt) is used. From this Keplers 2nd law can be verifed.
+The Euler-Cromer method is a reasonable approximator of planetary motion once a small enough time step (dt) is used. From this Keplers 2nd law can be verifed.
 """
